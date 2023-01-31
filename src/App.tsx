@@ -1,13 +1,10 @@
 import "./Index.css";
-import { Search } from "./components/search/search";
+import { Header } from "./components/Header/Header";
 function App() {
   return (
     <div className="App">
-      <div>
-        <Search />
-      </div>
+      <Header />
     </div>
   );
 }
-
 export default App;
