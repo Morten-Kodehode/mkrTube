@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./Index.css";
-import { Search } from "./components/search/search";
+import { Header } from "./components/Header/Header";
 import MainVideoGrid, { Item } from "./components/MainVideoGrid/MainVideoGrid";
 import axios from "axios";
 
@@ -20,11 +20,10 @@ function App() {
   return (
     <div className="App">
       <div>
-        <Search />
+        <Header />
         <MainVideoGrid items={items} />
       </div>
     </div>
   );
 }
-
 export default App;
