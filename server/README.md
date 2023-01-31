@@ -14,7 +14,7 @@ TLD Root: Possible website presenting the project.
 ## Install
 
 ```
-git clone url
+git clone https://github.com/Morten-Kodehode/mkrTube
 ```
 
 ```
