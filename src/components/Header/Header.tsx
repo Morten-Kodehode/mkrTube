@@ -4,12 +4,10 @@ import { Search } from "./Search/Search";
 
 export function Header() {
   return (
-    <div className="flex flex-row justify-between p-4 border-solid border-2 border-grey">
+    <div className="grid grid-cols-10 grid-rows-1 h-20 items-center justify-center border-solid border-2">
       <Search />
-      <div className="flex flex-row w-1/5 justify-between">
-        <Login />
-        <User />
-      </div>
+      <Login />
+      <User />
     </div>
   );
 }
