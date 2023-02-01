@@ -1,13 +1,14 @@
-import { User } from "./User/User";
+import { useState } from "react";
+// import { User } from "./User/User";
 import { Login } from "./Login/Login";
 import { Search } from "./Search/Search";
 
 export function Header() {
   return (
-    <div className="grid grid-cols-10 grid-rows-1 h-20 items-center justify-center border-solid border-2">
-      <Search />
+    <div className="h-20">
       <Login />
-      <User />
+      {/* <Search /> */}
+      {/* <User /> */}
     </div>
   );
 }
