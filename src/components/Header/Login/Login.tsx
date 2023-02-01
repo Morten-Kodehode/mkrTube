@@ -1,33 +1,80 @@
-import { useState } from "react";
+import{ useState } from "react";
+
 export function Login() {
-  const [showLogin, setShowLogin] = useState(false);
+  const [Open, setOpen] = useState(false);
+  // state to open og close the login menu. 
+  const [form, setForm] = useState("login");
+  // this switches between the login menu and the registration menu. 
+  const [username, setUsername] = useState("");
+  // state to keep hold of the username. 
+  const [password, setPassword] = useState("");
+// state to keep hold of the password. 
+
+  const handleFormToggle = () => {
+    setForm(form === "login" ? "register" : "login");
+  };
+  // first gives you the login menu. if its the login menu showing and you click it again it switches to the registration menu. 
+  const handleLogin = (e:any) => {
+    e.preventDefault();
+  };
+  const handleRegister = (e:any) => {
+    e.preventDefault();
+  };
+// this is to handle the login or the register. 
+
   return (
-    <div className="col-start-7 col-span-1 flex">
-      <button
-        className="mr-4 border-solid border-2 p-5  rounded"
-        onClick={() => {
-          setShowLogin(!showLogin);
-        }}
-      >
-        {/* this is the Login button, it hides the two input fields for username and password with useState while the state is false.
-        clicking the button turns it into true and reveals the input fields below */}
-        Login
+    <div className="relative top-0 l-1">
+      <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 p-5 rounded w-38 active:scale-95 w-40" onClick={() => setOpen(!Open)}>
+        {form === "login" ? "Login" : "Register"}
       </button>
-      <div>
-        {showLogin && (
-          <div className="">
-            <input
-              className="border-solid border-2 rounded m-1"
-              type="string"
-              placeholder="Username"
-            ></input>
-            <input
-              className="border-solid border-2 rounded m-1"
-              placeholder="Password"
-            ></input>
-          </div>
-        )}
-      </div>
+      {/* main Login-button to open the menu.  */}
+      {Open && (
+        <div className="absolute">
+          {form === "login" ? (
+            <form className="bg-white rounded-lg shadow-xl p-2 block" onSubmit={handleLogin}>
+              <button className="block px-4 py-2 text-sm hover:bg-red-300 rounded" type="button" onClick={handleFormToggle}>
+                {/* main Register button to switch to the register menu. */}
+                Register
+              </button>
+              <input className="block px-4 py-2 text-sm hover:bg-red-300"
+                type="text"
+                placeholder="Username"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+              />
+              <input className="block px-4 py-2 text-sm hover:bg-red-300"
+                type="password"
+                placeholder="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+             <button className="block px-4 py-2 text-sm hover:bg-red-300 active:scale-95" type="submit">Submit</button>
+            </form>
+          ) : (
+            <form className="bg-white py-2 p-5 rounded w-38 active:scale-95" onSubmit={handleRegister}>
+              <button className="block px-4 py-2 text-sm hover:bg-red-300"  type="button" onClick={handleFormToggle}>
+                Login
+              </button>
+              <input
+                className="block px-4 py-2 text-sm hover:bg-red-300"
+                type="text"
+                placeholder="Username"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+              />
+              <input
+                className="block px-4 py-2 text-sm hover:bg-red-300"
+                type="password"
+                placeholder="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+             <button className="block px-4 py-2 text-sm hover:bg-red-300"  type="submit">Submit</button>
+            </form>
+          )}
+        </div>
+      )}
     </div>
   );
-}
+};
+
