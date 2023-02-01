@@ -1,7 +1,6 @@
 export function Search() {
   return (
-    <div className="border-solid w-1/4 border-2 p-5 w-auto rounded">
-      <input className="w-fit" type="string" placeholder="search-bar" />
-    </div>
+      <input className="w-fit h-8 border-solid border-2 rounded self-center" type="string" placeholder="search-bar" />
+      // search bar, unsure of the positioning as of now, and how to link it to the server. 
   );
 }
