@@ -40,7 +40,7 @@ const MainVideoGrid = ({ items }: { items: Item[] }) => {
 
   return (
     <div>
-      <div className="grid sm:grid-cols-1 md:grid-cols-3">
+      <div className="grid sm:grid-cols-1 md:grid-cols-3 z-0">
         {displayedItems.map((item) => (
           <div key={item.id} className="p-2 bg-gray-200 rounded-xl m-2">
             <p>{item.title}</p>
