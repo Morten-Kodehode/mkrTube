@@ -4,7 +4,7 @@ import { Header } from "./components/Header/Header";
 import MainVideoGrid, { Item } from "./components/MainVideoGrid/MainVideoGrid";
 import axios from "axios";
 
-const baseUrl = "https://db.versa-db.com/mkrtube/data.json";
+const baseUrl = "https://mkrtube.com/api/?view=demo";
 
 function App() {
   const [items, setItems] = useState([]);
